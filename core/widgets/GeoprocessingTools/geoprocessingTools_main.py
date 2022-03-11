@@ -6,9 +6,9 @@ from core.uis.GeoprocessingTools_ui.GeoprocessingTools_ui import Ui_Geoprocessin
 from core.widgets.GeoprocessingTools.geoprocessingTools_calc import GeoprocessingToolsWorker
 import os
 import logging
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 
 
 class GeoprocessingTools(QMainWindow):

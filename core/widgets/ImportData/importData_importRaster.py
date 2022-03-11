@@ -1,9 +1,9 @@
 import numpy as np
 import os
 from osgeo import gdal, gdalconst
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import shutil
 from core.libs.GDAL_Libs.Layers import Raster
 

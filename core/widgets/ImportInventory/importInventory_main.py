@@ -8,11 +8,11 @@ import time
 import random
 import logging
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtNetwork import *
 
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog
 from core.uis.ImportInventory_ui.ImportInventory_ui import Ui_ImportInventory

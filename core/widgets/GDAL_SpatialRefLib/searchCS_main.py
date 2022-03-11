@@ -6,11 +6,11 @@ import os
 import sys
 import webbrowser
 
-from PyQt5 import QtCore, QtGui, QtWidgets, uic
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtCore, QtGui, QtWidgets, uic
+from PyQt6.QtCore import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtNetwork import *
 from core.uis.SetProjection_ui.search_cs_ui import Ui_SearchWindow
 
 

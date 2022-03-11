@@ -1,8 +1,8 @@
 import math
 import os
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 from core.libs.Reporting.ahp_report import ahp_report
 from core.uis.ResultViewer_ui.tabbedResultViewerAHP_ui import Ui_tabbedResultViewerAHP
 from core.widgets.ResultViewer.shared_resultviewer import shared_resultfunc

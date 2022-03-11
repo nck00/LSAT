@@ -1,7 +1,7 @@
 import logging
 import os
 import traceback
-from PyQt5.QtCore import *
+from PyQt6.QtCore import *
 from core.libs.GDAL_Libs.Layers import Feature
 from osgeo import gdal, ogr, osr
 

@@ -8,10 +8,10 @@ from osgeo import ogr
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog
 from core.uis.AttributeTable_ui.attributeTable_ui import Ui_AttributeTable
 from core.widgets.FeatureInfo.featureInfo_main import FeatureInfo
-from PyQt5 import QtCore
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt6 import QtCore
+from PyQt6.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
 from openpyxl import Workbook
 
 

@@ -5,11 +5,11 @@ import os
 import sys
 import numpy as np
 import configparser
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtNetwork import *
 from core.uis.LogisticRegression_ui.LogisticRegression_ui import Ui_LogisticRegressionFrame
 from core.libs.Management.LayerManagement import LayerManagement as LM
 from core.libs.GDAL_Libs.Layers import Raster, Feature, RasterLayer

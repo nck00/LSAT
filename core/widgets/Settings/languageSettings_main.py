@@ -1,11 +1,11 @@
 # -*- coding: cp1252 -*-
 
 import codecs
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtNetwork import *
 from core.uis.Settings_ui.LanguageSettings_ui import Ui_LanguageSettings
 from core.libs.Management import Project_configuration as configuration
 

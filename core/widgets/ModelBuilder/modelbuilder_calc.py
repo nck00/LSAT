@@ -1,7 +1,7 @@
 import math
 import numpy as np
 import os, logging, traceback
-from PyQt5.QtCore import *
+from PyQt6.QtCore import *
 from sklearn.metrics import roc_curve, roc_auc_score
 from sklearn.metrics import auc as aucfunc
 from core.libs.Analysis.Random_Sampling import RandomSampling

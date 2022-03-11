@@ -4,10 +4,10 @@ from osgeo import gdal, ogr, osr, gdalconst
 import os, sys, math, time
 import numpy as np
 import logging 
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 from core.uis.ModelBuilder_ui.ExpressionBuilder_ui import Ui_ExpressionBuilder
 from core.libs.GDAL_Libs.Layers import Raster
 

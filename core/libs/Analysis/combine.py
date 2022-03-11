@@ -4,10 +4,10 @@ import numpy as np
 from osgeo import gdal, gdalconst
 from core.libs.GDAL_Libs.Layers import Raster
 import os
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import time
 
 gdal.AllRegister()

@@ -3,11 +3,11 @@
 import os
 import sys
 from osgeo import gdal, osr, ogr
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtNetwork import *
 
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog
 from core.libs.Analysis.Random_Sampling import RandomSampling

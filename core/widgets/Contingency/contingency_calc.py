@@ -2,7 +2,7 @@ import itertools
 import math
 import numpy as np
 import os
-from PyQt5.QtCore import *
+from PyQt6.QtCore import *
 from core.libs.GDAL_Libs.Layers import Raster
 
 

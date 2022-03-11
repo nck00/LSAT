@@ -6,7 +6,7 @@ import matplotlib
 from matplotlib.figure import Figure
 import numpy as np
 import os
-from PyQt5.QtCore import QObject
+from PyQt6.QtCore import QObject
 import time
 from core.libs.GDAL_Libs.Layers import Feature, Raster
 from core.libs.Reporting.shared_report import shared_report

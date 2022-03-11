@@ -1,7 +1,7 @@
 import os
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 from core.uis.ResultViewer_ui.tabbedResultViewer_ui import Ui_tabbedResultViewer
 from core.widgets.ResultViewer.shared_resultviewer import shared_resultfunc, TableModel
 

@@ -5,9 +5,9 @@ import logging
 import os
 from osgeo import ogr
 from osgeo import osr
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import random
 import webbrowser
 import xml.etree.ElementTree as ET

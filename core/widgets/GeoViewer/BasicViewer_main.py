@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtNetwork import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtNetwork import *
 import sys
 import os
 import math

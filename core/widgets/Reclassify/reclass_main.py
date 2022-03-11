@@ -9,10 +9,10 @@ import numpy as np
 import logging
 import traceback
 
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import matplotlib
 import traceback
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas

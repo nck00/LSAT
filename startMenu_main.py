@@ -2,10 +2,10 @@
 
 from osgeo import gdal
 import time
-from PyQt5 import QtGui, QtCore, QtWidgets, QtNetwork
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6 import QtGui, QtCore, QtWidgets, QtNetwork
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import sys
 import os
 from core.libs.Management import Project_configuration as config

@@ -1,9 +1,9 @@
 import numpy as np
 import sys
 import os
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.QtCore import *
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+from PyQt6.QtCore import *
 from core.libs.GDAL_Libs.Layers import Raster
 from core.libs.Analysis.BivariateSolver import WofE
 from core.uis.ResultViewer_ui.tabbedResultViewer_ui import Ui_tabbedResultViewer

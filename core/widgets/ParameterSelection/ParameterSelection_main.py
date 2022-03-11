@@ -2,10 +2,10 @@
 
 import os
 import sys
-from PyQt5 import QtGui, QtCore, QtWidgets
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 from core.libs.Management.LayerManagement import LayerManagement
 from core.libs.GDAL_Libs.Layers import RasterLayer
 from core.uis.ParameterSelection_ui.ParameterSelection_ui import Ui_ParameterSelection

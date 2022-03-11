@@ -5,9 +5,9 @@ import os
 import traceback
 from osgeo import gdal
 from osgeo import osr
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog
 from core.libs.GDAL_Libs.Layers import Raster, RasterLayer
 from core.libs.Management.LayerManagement import LayerManagement

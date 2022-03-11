@@ -4,7 +4,7 @@
 [![DOI](https://zenodo.org/badge/386274608.svg)](https://zenodo.org/badge/latestdoi/386274608)
 
 LSAT PM (Landslide Susceptibility Assessment Tools Project Manager Suite) was primarily developed to conduct landslide susceptibility analyses, it is not limited to this issue and applies to any other research dealing with supervised spatial binary classification.
-We tested LSAT on Windows and Linux (Ubuntu 20.04). LSAT uses Python3 and great packages like PyQt5, sklearn and GDAL.
+We tested LSAT on Windows and Linux (Ubuntu 20.04). LSAT uses Python3 and great packages like PyQt6, sklearn and GDAL.
 
 LSAT aims to be an easy to use Toolkit. Giving the user more time to focus on their research instead of the inner workings of the tools they use.
 

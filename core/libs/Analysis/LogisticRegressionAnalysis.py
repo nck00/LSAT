@@ -15,10 +15,10 @@ from core.libs.Rasterprepwork.rpw_main import rasterprepwork
 import joblib
 import logging
 import math
-from PyQt5 import QtCore
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+from PyQt6 import QtCore
+from PyQt6.QtCore import *
+from PyQt6.QtGui import *
+from PyQt6.QtWidgets import *
 import traceback
 
 logging.captureWarnings(True)
