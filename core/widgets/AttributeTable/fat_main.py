@@ -159,12 +159,12 @@ class TableModel(QAbstractTableModel):
     def data(self, index, role):
         if not index.isValid():
             return QVariant()
-        if role != Qt.DisplayRole:
+        if role != Qt.ItemDataRole.DisplayRole:
             return QVariant()
         return QVariant(self.arraydata[index.row()][index.column()])
 
     def headerData(self, col, orientation, role):
-        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+        if orientation == Qt.Horizontal and role == Qt.ItemDataRole.DisplayRole:
             return QVariant(self.headerdata[col])
         return QVariant()
 

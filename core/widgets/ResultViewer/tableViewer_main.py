@@ -35,8 +35,8 @@ class TableModel(QAbstractTableModel):
     def columnCount(self, QModelIndex_parent=None, *args, **kwargs):
         return len(self.header)
 
-    def data(self, index, role=QtCore.Qt.DisplayRole):
-        if role == QtCore.Qt.DisplayRole:
+    def data(self, index, role=QtCore.Qt.ItemDataRole.DisplayRole):
+        if role == QtCore.Qt.ItemDataRole.DisplayRole:
             i = index.row()
             j = index.column()
             if "int" in str(self.dtypes[j]):
@@ -50,15 +50,15 @@ class TableModel(QAbstractTableModel):
         elif role == Qt.TextAlignmentRole:
             return Qt.AlignCenter
 
-        elif role != Qt.DisplayRole:
+        elif role != Qt.ItemDataRole.DisplayRole:
             return QVariant()
         else:
             return QVariant()
 
-    def headerData(self, section, orientation, role=Qt.DisplayRole):
-        if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+    def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
+        if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Horizontal:
             return self.header[section]
-        if role == Qt.DisplayRole and orientation == Qt.Vertical:
+        if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Vertical:
             return QVariant(self.verticalHeader[section])
         return QAbstractTableModel.headerData(self, section, orientation, role)
 

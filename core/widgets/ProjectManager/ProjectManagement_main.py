@@ -23,7 +23,7 @@ from core.libs.LSAT_Messages.messages_main import Messenger
 from core.widgets.GDAL_SpatialRefLib.searchCS_main import MainForm as SR_Lib
 from core.widgets.ImportData.importData_dialog import ReprojectionSettings
 from core.widgets.ImportData.importData_importRaster import ImportRaster
-from core.uis.ProjectManagement_ui.project_ui import Ui_Project
+from core.uis.ProjectManagement_ui.Project_ui import Ui_Project
 
 
 class NewProject(QDialog):

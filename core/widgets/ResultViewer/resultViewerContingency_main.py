@@ -203,8 +203,8 @@ class TableModel(QAbstractTableModel):
         else:
             return len(self.header_h)
 
-    def data(self, index, int_role=QtCore.Qt.DisplayRole):
-        if int_role == QtCore.Qt.DisplayRole:
+    def data(self, index, int_role=QtCore.Qt.ItemDataRole.DisplayRole):
+        if int_role == QtCore.Qt.ItemDataRole.DisplayRole:
             i = index.row()
             j = index.column()
             return '{:10.2f}'.format(self.indata[i][j])
@@ -228,15 +228,15 @@ class TableModel(QAbstractTableModel):
         else:
             return QtCore.QVariant()
 
-    def headerData(self, section, orientation, role=Qt.DisplayRole):
+    def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
         if self.tabMode:
-            if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+            if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Horizontal:
                 return self.header[section]
-            if role == Qt.DisplayRole and orientation == Qt.Vertical:
+            if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Vertical:
                 return self.header[section]
         else:
-            if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+            if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Horizontal:
                 return self.header_h[section]
-            if role == Qt.DisplayRole and orientation == Qt.Vertical:
+            if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Vertical:
                 return self.header_v[section]
         return QAbstractTableModel.headerData(self, section, orientation, role)

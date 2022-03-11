@@ -19,7 +19,7 @@ from matplotlib.figure import Figure
 import logging
 
 from core.libs.GDAL_Libs.Layers import Raster, Feature, RasterLayer
-from core.uis.ResultViewer_ui.plotViewer_ui import Ui_GraphicViewer
+from core.uis.ResultViewer_ui.PlotViewer_ui import Ui_GraphicViewer
 
 if os.name == "nt":
     prop = matplotlib.font_manager.FontProperties(fname="C:\\Windows\\Fonts\\Msyh.ttc")

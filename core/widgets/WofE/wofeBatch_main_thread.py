@@ -19,7 +19,7 @@ from core.libs.Analysis.Random_Sampling import RandomSampling
 from core.libs.Analysis.BivariateSolver import WofE
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog
 from core.libs.Reporting.woe_report import woe_report
-from core.uis.WofE_ui.WofeBatch_ui import Ui_wofeBatch
+from core.uis.WofE_ui.WofEBatch_ui import Ui_wofeBatch
 from core.widgets.WofE.advancedSettings_main import AdvancedSettings
 from core.widgets.ParameterSelection.ParameterSelection_main import ParameterSelection
 from core.widgets.RasterInfo.rasterInfo_main import RasterInfo

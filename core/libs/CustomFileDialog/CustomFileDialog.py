@@ -10,7 +10,6 @@ import os
 import sys
 import logging
 from osgeo import gdal
-import core.resources.icons_rc
 from core.libs.GDAL_Libs.Layers import Raster, Feature
 
 

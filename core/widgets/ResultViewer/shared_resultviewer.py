@@ -20,8 +20,8 @@ class TableModel(QAbstractTableModel):
     def columnCount(self, QModelIndex_parent=None, *args, **kwargs):
         return len(self.header)
 
-    def data(self, index, int_role=Qt.DisplayRole):
-        if int_role == Qt.DisplayRole:
+    def data(self, index, int_role=Qt.ItemDataRole.DisplayRole):
+        if int_role == Qt.ItemDataRole.DisplayRole:
             i = index.row()
             j = index.column()
             if "float" in str(self.dtypes[j]):
@@ -31,8 +31,8 @@ class TableModel(QAbstractTableModel):
         else:
             return QVariant()
 
-    def headerData(self, section, orientation, role=Qt.DisplayRole):
-        if role == Qt.DisplayRole and orientation == Qt.Horizontal:
+    def headerData(self, section, orientation, role=Qt.ItemDataRole.DisplayRole):
+        if role == Qt.ItemDataRole.DisplayRole and orientation == Qt.Horizontal:
             return self.header[section]
         return QAbstractTableModel.headerData(self, section, orientation, role)
 

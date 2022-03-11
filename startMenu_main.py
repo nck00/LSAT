@@ -11,7 +11,6 @@ import os
 from core.libs.Management import Project_configuration as config
 from core.libs.CustomFileDialog import CustomFileDialog
 from core.widgets.LSAT_main.MainFrame_main import MainFrame
-import core.resources.icons_rc
 import configparser
 import webbrowser
 
@@ -168,7 +167,7 @@ def start():
     gdal.AllRegister()
     app = QApplication(sys.argv)
     splash_pix = QPixmap(':/icons/Icons/SplashScreen.png')
-    splash = QSplashScreen(splash_pix, Qt.WindowStaysOnTopHint)
+    splash = QSplashScreen(splash_pix, Qt.WindowType.WindowStaysOnTopHint)
     splash.setMask(splash_pix.mask())
     splash.show()
     configuration = config.Configuration()

@@ -19,7 +19,7 @@ from matplotlib.figure import Figure
 from core.libs.CustomFileDialog.CustomFileDialog import CustomFileDialog as FileDialog
 from core.libs.GDAL_Libs.Layers import Raster
 from core.libs.LSAT_Messages.messages_main import Messenger
-from core.uis.Zoning_ui.Zoning_ui import Ui_ZoningGUI
+from core.uis.Zoning_ui.zoning_ui import Ui_ZoningGUI
 from core.widgets.ModelInfo.modelinfo_main import ModelInfo
 import traceback
 import logging

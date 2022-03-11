@@ -375,12 +375,12 @@ class TableModel(QAbstractTableModel):
             return Qt.AlignCenter
         elif role == Qt.EditRole:
             return QVariant(self.arraydata[index.row()][index.column()])
-        elif role != Qt.DisplayRole:
+        elif role != Qt.ItemDataRole.DisplayRole:
             return QVariant()
         return QVariant(self.arraydata[index.row()][index.column()])
 
-    def headerData(self, col, orientation, role=Qt.DisplayRole):
-        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
+    def headerData(self, col, orientation, role=Qt.ItemDataRole.DisplayRole):
+        if orientation == Qt.Horizontal and role == Qt.ItemDataRole.DisplayRole:
             return QVariant(self.headerdata[col])
         if role == Qt.TextAlignmentRole:
             return Qt.AlignCenter
