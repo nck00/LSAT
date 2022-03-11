@@ -207,9 +207,15 @@ class NewProject(QDialog):
             self.ui.rightLineEdit.setText(str(extent[1]))
             self.ui.bottomLineEdit.setText(str(extent[2]))
             self.ui.topLineEdit.setText(str(extent[3]))
-            self.ui.cellsizeLineEdit.setText(str(self.raster.cellsize[0]))
+            self.ui.cellsizeLineEdit.setText(self.checkCellSquare(self.raster.cellsize))
             self.ui.srNameLineEdit.setText(str(self.proj))
             self.checkUnits()
+
+    def checkCellSquare(self, rasterCellSize: list) -> str:
+        if rasterCellSize[0] == -rasterCellSize[1]: # 0 = X; 1 = Y
+            return str(rasterCellSize[0])
+        else:
+            return self.tr("No support for non-square cells.")
 
     def updateEPSGLineColor(self):
         if str(self.ui.epsgCodeLineEdit.text()) == "None":
@@ -304,10 +310,11 @@ class NewProject(QDialog):
 
             if self.ui.cellsizeLineEdit.text() == "":
                 return
-
+            try:
+                float(self.ui.cellsizeLineEdit.text())
+            except ValueError: # user loaded a raster with non-square cells
+                self.ui.cellsizeLineEdit.setStyleSheet(red)
             self.check = True
-        else:
-            return
 
     def createPolygon(self, projectRasterPath: str):
         """
@@ -383,6 +390,12 @@ class NewProject(QDialog):
         ) == "" or self.ui.bottomLineEdit.text() == "" or self.ui.cellsizeLineEdit.text() == "":
             QMessageBox.warning(self, self.tr("Extent missing"), self.tr(
                 "Please specify the extent of the project to proceed!"))
+            return False
+        try:
+            float(self.ui.cellsizeLineEdit.text())
+        except ValueError:
+            QMessageBox.warning(self, self.tr("Invalid cell size"), self.tr(
+                "Please use a raster with square cells to proceed!"))
             return False
         return True
 
@@ -463,8 +476,13 @@ class NewProject(QDialog):
                 self.raster.geoTrans[4],
                 -cellsize)
             array = self.raster.getArrayFromBand().astype(np.float32)
-            array[np.where(array != self.raster.nodata)] = 1
-            array[np.where(array == self.raster.nodata)] = -9999
+            if np.isnan(self.raster.nodata):
+                np.nan_to_num(array, copy=False, nan=-9999)
+                rasterNoData = -9999
+            else:
+                rasterNoData = self.raster.nodata
+            array[array != rasterNoData] = 1
+            array[array == rasterNoData] = -9999
         # Project coordinates by hand
         else:
             geoTransform = (left, cellsize, 0.0, top, 0.0, -cellsize)
