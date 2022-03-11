@@ -69,7 +69,7 @@ class ann(QMainWindow):
         self.ui.mainTableWidget.setTextElideMode(Qt.ElideLeft)
         self.ui.mainTableWidget.setWordWrap(False)
         self.ui.mainTableWidget.horizontalHeader().setTextElideMode(Qt.ElideLeft)
-        # self.ui.mainTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # self.ui.mainTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.ui.mainTableWidget.setStyleSheet("QHeaderView::section{background-color:#b7cbeb}")
 
         # Fill inventoryLineEdit and outputLineEdit with project defaults
@@ -186,7 +186,7 @@ class ann(QMainWindow):
                 rowposition, 1, comboxrastertype)
 
             self.ui.mainTableWidget.horizontalHeader().setSectionResizeMode(
-                0, QHeaderView.Stretch)  # Resizes table to fit given data after adding them
+                0, QHeaderView.ResizeMode.Stretch)  # Resizes table to fit given data after adding them
             self.ui.mainTableWidget.horizontalHeader().setSectionResizeMode(1,
                                                                             QHeaderView.ResizeToContents)
 

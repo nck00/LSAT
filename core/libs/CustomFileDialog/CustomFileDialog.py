@@ -83,7 +83,6 @@ class CustomFileDialog(QFileDialog):
         self.valFiles = []
         self.iconProvider = CustomIconProvider()
         self.setIconProvider(self.iconProvider)
-        self.setOptions(QFileDialog.DontUseNativeDialog)
         self.filesSelected.connect(self.checkFileNames)
 
     def openProject(self, path=os.getcwd()):
@@ -124,7 +123,6 @@ class CustomFileDialog(QFileDialog):
         self.setIconProvider(self.iconProvider)
         self.setFileMode(QFileDialog.ExistingFile)
         self.setNameFilter(self.tr("Raster (*.tif)"))
-        self.setOptions(QFileDialog.DontUseNativeDialog)
 
     def openRasterFiles(self, path=""):
         """
@@ -138,7 +136,6 @@ class CustomFileDialog(QFileDialog):
         self.setIconProvider(self.iconProvider)
         self.setFileMode(QFileDialog.ExistingFiles)
         self.setNameFilter(self.tr("Raster (*.tif)"))
-        self.setOptions(QFileDialog.DontUseNativeDialog)
 
     def openModelFile(self, path=""):
         """

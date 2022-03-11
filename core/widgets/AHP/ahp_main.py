@@ -36,7 +36,7 @@ class ahp(QMainWindow):
 
         # Tell inputTable and rasertableWidget to cut of the left side of the text "..." and
         # stretch it to fill the ui. We also limit rastertablewidget verticalheadersize.
-        self.ui.inputTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.ui.inputTableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         self.ui.inputTableWidget.setTextElideMode(Qt.ElideLeft)
         self.ui.inputTableWidget.setWordWrap(False)
         self.ui.rastertableWidget.horizontalHeader().setTextElideMode(Qt.ElideLeft)

@@ -39,7 +39,7 @@ class LogRegression(QMainWindow):
         # tree widget containing the raster layers that should be analysed
         self.tree = self.ui.treeWidget
         self.tree.setStyleSheet("QHeaderView::section{background-color:#b7cbeb}")
-        self.tree.header().setSectionResizeMode(QHeaderView.Stretch)
+        self.tree.header().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
         # Layer management class (abstract class) that manages the add and delete
         # functions in the tree widget
         self.LM = LM()
