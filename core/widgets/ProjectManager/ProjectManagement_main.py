@@ -31,7 +31,7 @@ class NewProject(QDialog):
         QWidget.__init__(self, parent)
         self.ui = Ui_Project()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/new_project.png'))
+        self.setWindowIcon(QIcon('icons:new_project.png'))
         self.setWindowTitle(self.tr("New Project"))
         self.fileDialog = CustomFileDialog()
         self.message = Messenger()

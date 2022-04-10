@@ -18,7 +18,7 @@ class ParameterSelection(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_ParameterSelection()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Settings.png'))
+        self.setWindowIcon(QIcon('icons:Settings.png'))
         self.allchecked = False
         self.projectLocation = projectLocation
         self.dataPath = os.path.join(self.projectLocation, "data")

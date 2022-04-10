@@ -28,7 +28,7 @@ class ahp(QMainWindow):
         self.ui.setupUi(self)
         self.dialog = CustomFileDialog()
         self.project_path = project_path
-        self.setWindowIcon(QIcon(":/icons/Icons/ahp.png"))
+        self.setWindowIcon(QIcon("icons:ahp.png"))
         self.pathNames = dict()
         # Sets the Header color
         self.ui.inputTableWidget.setStyleSheet("QHeaderView::section{background-color:#b7cbeb}")

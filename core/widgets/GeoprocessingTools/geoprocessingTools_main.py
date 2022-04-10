@@ -27,7 +27,7 @@ class GeoprocessingTools(QMainWindow):
         self.progress = QProgressBar()
         self.statusBar().addPermanentWidget(self.progress)
         # Set the window icon
-        self.setWindowIcon(QIcon(':/icons/Icons/GeoprocessingTools.png'))
+        self.setWindowIcon(QIcon('icons:GeoprocessingTools.png'))
 
         self.fileDialog = CustomFileDialog()
         self.projectLocation = projectLocation

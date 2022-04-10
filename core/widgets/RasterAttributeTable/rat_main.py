@@ -25,7 +25,7 @@ class AddField(QDialog):
         QDialog.__init__(self, parent)
         self.ui = Ui_AddField()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/AddField.png'))
+        self.setWindowIcon(QIcon('icons:AddField.png'))
 
     @pyqtSlot()
     def on_cancelPushButton_clicked(self):
@@ -57,14 +57,14 @@ class RasterAttributeTable(QMainWindow):
         # ui
         self.ui = Ui_AttributeTable()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/AttributeTable.png'))
+        self.setWindowIcon(QIcon('icons:AttributeTable.png'))
         self.setWindowTitle(self.tr("Raster Attribute Table - {}").format(raster_path))
         self.RAT_status = True
         self.dialog = CustomFileDialog()
         self.raster_path = raster_path
         # Set up Toolbar and triggers
         self.actionSetEditable = QAction(
-            QIcon(":/icons/Icons/File_Edit.png"),
+            QIcon("icons:File_Edit.png"),
             self.tr('Edit Attribute Table'),
             self)
         self.actionSetEditable.setCheckable(True)
@@ -72,7 +72,7 @@ class RasterAttributeTable(QMainWindow):
         self.ui.toolBar.addAction(self.actionSetEditable)
 
         self.actionAddField = QAction(
-            QIcon(":/icons/Icons/AddField.png"),
+            QIcon("icons:AddField.png"),
             self.tr('Add field'),
             self)
         self.actionAddField.triggered.connect(self.addColumn)
@@ -80,7 +80,7 @@ class RasterAttributeTable(QMainWindow):
         self.ui.toolBar.addAction(self.actionAddField)
 
         self.actionDeleteField = QAction(
-            QIcon(":/icons/Icons/DeleteField.png"),
+            QIcon("icons:DeleteField.png"),
             self.tr('Delete field'),
             self)
         self.actionDeleteField.triggered.connect(self.removeColumn)
@@ -88,7 +88,7 @@ class RasterAttributeTable(QMainWindow):
         self.ui.toolBar.addAction(self.actionDeleteField)
 
         self.actionSaveEdits = QAction(
-            QIcon(":/icons/Icons/SaveEdits.png"),
+            QIcon("icons:SaveEdits.png"),
             self.tr('Save edits'),
             self)
         self.actionSaveEdits.triggered.connect(self.saveEdits)
@@ -96,7 +96,7 @@ class RasterAttributeTable(QMainWindow):
         self.ui.toolBar.addAction(self.actionSaveEdits)
 
         self.actionExport = QAction(
-            QIcon(":/icons/Icons/OpenInExcel.png"),
+            QIcon("icons:OpenInExcel.png"),
             self.tr('Save RAT as xlsx-file'),
             self)
         self.actionExport.triggered.connect(self.exportTable)
@@ -104,7 +104,7 @@ class RasterAttributeTable(QMainWindow):
 
         self.ui.toolBar.addSeparator()
         actionGDALRasterInfo = QAction(
-            QIcon(":/icons/Icons/raster_info.png"),
+            QIcon("icons:raster_info.png"),
             self.tr('GDAL raster info'),
             self)
         actionGDALRasterInfo.triggered.connect(self.showRasterInfo)

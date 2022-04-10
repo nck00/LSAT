@@ -22,18 +22,18 @@ class MainForm(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_StartOptions()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/LSATLogo.png'))
+        self.setWindowIcon(QIcon('icons:LSATLogo.png'))
         self.config = config.Configuration()
         # Set actions on mouse press event for Labels
         self.ui.openProjectLabel.mousePressEvent = self.openProjectLabel_clicked
         self.ui.newProjectLabel.mousePressEvent = self.newProjectLabel_clicked
         # Connects Menubar buttons to functions
-        self.ui.actionLanguage.setIcon(QIcon(':/icons/Icons/language.png'))
-        self.ui.actionHelp.setIcon(QIcon(':/icons/Icons/Help.png'))
-        self.ui.actionAbout_LSAT.setIcon(QIcon(':/icons/Icons/Info.png'))
-        self.ui.newProjectLabel.setIcon(QIcon(':/icons/Icons/new_project.png'))
+        self.ui.actionLanguage.setIcon(QIcon('icons:language.png'))
+        self.ui.actionHelp.setIcon(QIcon('icons:Help.png'))
+        self.ui.actionAbout_LSAT.setIcon(QIcon('icons:Info.png'))
+        self.ui.newProjectLabel.setIcon(QIcon('icons:new_project.png'))
         self.ui.newProjectLabel.setIconSize(QSize(100, 100))
-        self.ui.openProjectLabel.setIcon(QIcon(':/icons/Icons/open_project.png'))
+        self.ui.openProjectLabel.setIcon(QIcon('icons:open_project.png'))
         self.ui.openProjectLabel.setIconSize(QSize(100, 100))
         self.ui.actionAbout_LSAT.triggered.connect(self.on_actionAbout_LSAT_clicked)
         self.ui.actionHelp.triggered.connect(self.on_actionHelp_clicked)
@@ -52,7 +52,7 @@ class MainForm(QMainWindow):
                     if os.path.exists(os.path.join(project, 'thumb.png')):
                         icon_path = os.path.join(project, 'thumb.png')
                     else:
-                        icon_path = ":/icons/Icons/project_icon.png"
+                        icon_path = "icons:project_icon.png"
                     pixmap = QPixmap(icon_path)
                     icon.addPixmap(pixmap, QIcon.Normal, QtGui.QIcon.Off)
                     self.comLinkButton.setIcon(icon)
@@ -118,7 +118,7 @@ class MainForm(QMainWindow):
         """
         aboutLSAT = QMessageBox()
         aboutLSAT.setWindowTitle("About LSAT")
-        aboutLSAT.setWindowIcon(QIcon(':/icons/Icons/Info.png'))
+        aboutLSAT.setWindowIcon(QIcon('icons:Info.png'))
         aboutLSAT.setText(
             """<h2>Landslide Susceptibility Assessment Tools - Project Manager Suite v 1.0.0</h2>
         LSAT was primarily developed to conduct landslide susceptibility analyses, it is not
@@ -166,7 +166,8 @@ def start():
     """
     gdal.AllRegister()
     app = QApplication(sys.argv)
-    splash_pix = QPixmap(':/icons/Icons/SplashScreen.png')
+    QDir.addSearchPath("icons", "core/resources/Icons")
+    splash_pix = QPixmap('icons:SplashScreen.png')
     splash = QSplashScreen(splash_pix, Qt.WindowType.WindowStaysOnTopHint)
     splash.setMask(splash_pix.mask())
     splash.show()

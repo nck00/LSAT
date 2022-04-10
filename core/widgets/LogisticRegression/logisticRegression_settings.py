@@ -20,7 +20,7 @@ class Settings(QWidget):
         self.configFilePath = os.path.join(
             "core", "Widgets", "LogisticRegression", "configLogReg.ini")
         self.checkini()
-        self.setWindowIcon(QIcon(':/icons/Icons/Settings.png'))
+        self.setWindowIcon(QIcon('icons:Settings.png'))
         self.setWindowTitle(self.tr("Advanced Settings"))
         self.readConfigfile(self.configFilePath)
         self.loadFromConfigFile()

@@ -47,15 +47,15 @@ class CustomIconProvider(QFileIconProvider):
                 ext = os.path.splitext(fname)[1]
 
             if ext == ".tif":
-                return QIcon(':/icons/Icons/raster_icon.png')
+                return QIcon('icons:raster_icon.png')
             elif ext == ".docx":
-                return QIcon(":/icons/Icons/WordReport.png")
+                return QIcon("icons:WordReport.png")
             elif ext == ".xlsx":
-                return QIcon(":/icons/Icons/OpenInExcel.png")
+                return QIcon("icons:OpenInExcel.png")
             elif ext == ".npz" and os.path.basename(os.path.dirname(fname)) == "tables":
-                return QIcon(":/icons/Icons/File_Table.png")
+                return QIcon("icons:File_Table.png")
             elif ext == ".npz" and os.path.basename(os.path.dirname(fname)) == "susceptibility_maps":
-                return QIcon(":/icons/Icons/model.png")
+                return QIcon("icons:model.png")
             elif ext == ".shp":
                 shapefile = ogr.Open(str(fname))
                 layer = shapefile.GetLayer()
@@ -64,11 +64,11 @@ class CustomIconProvider(QFileIconProvider):
                 geometryName = geomRef.GetGeometryName()
 
                 if geometryName == "POINT":
-                    return QIcon(':/icons/Icons/point_shape.png')
+                    return QIcon('icons:point_shape.png')
                 elif geometryName == "POLYGON":
-                    return QIcon(':/icons/Icons/polygon_shape.png')
+                    return QIcon('icons:polygon_shape.png')
                 elif geometryName == "POLYLINE":
-                    return QIcon(':/icons/Icons/polyline_shape.png')
+                    return QIcon('icons:polyline_shape.png')
                 else:
                     return super(CustomIconProvider, self).icon(fileInfo)
             else:
@@ -91,7 +91,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open Project"))
-        icon = QIcon(':/icons/Icons/open_project.png')
+        icon = QIcon('icons:open_project.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -104,7 +104,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open directory"))
-        icon = QIcon(':/icons/Icons/Folder.png')
+        icon = QIcon('icons:Folder.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -117,7 +117,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open raster file"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -130,7 +130,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open raster files"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -143,7 +143,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open model"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -156,7 +156,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open feature file"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -169,7 +169,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Open text or doc file"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -182,7 +182,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Save feature file"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setDirectory(path)
         self.setIconProvider(self.iconProvider)
@@ -196,7 +196,7 @@ class CustomFileDialog(QFileDialog):
         :return: None
         """
         self.setWindowTitle(self.tr("Save raster"))
-        icon = QIcon(':/icons/Icons/project_icon.png')
+        icon = QIcon('icons:project_icon.png')
         self.setWindowIcon(icon)
         self.setIconProvider(self.iconProvider)
         self.setFileMode(QFileDialog.AnyFile)
@@ -209,7 +209,7 @@ class CustomFileDialog(QFileDialog):
         Opens save excel file dialog.
         """
         self.setWindowTitle(self.tr("Save table"))
-        self.setWindowIcon(QIcon(":/icons/Icons/OpenInExcel.png"))
+        self.setWindowIcon(QIcon("icons:OpenInExcel.png"))
         self.setIconProvider(self.iconProvider)
         self.setFileMode(QFileDialog.AnyFile)
         self.setDirectory(str(directory))
@@ -221,7 +221,7 @@ class CustomFileDialog(QFileDialog):
         Opens save image file dialog.
         """
         self.setWindowTitle(self.tr("Save Image"))
-        self.setWindowIcon(QIcon(":/icons/Icons/project_icon.png"))
+        self.setWindowIcon(QIcon("icons:project_icon.png"))
         self.setIconProvider(self.iconProvider)
         self.setFileMode(QFileDialog.AnyFile)
         self.setDirectory(str(directory))

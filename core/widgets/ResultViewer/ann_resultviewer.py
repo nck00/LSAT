@@ -15,7 +15,7 @@ class ann_resultviewer(QMainWindow):
         # ui
         self.ui = Ui_tabbedResultViewer()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
         self.setWindowTitle(self.tr("Results - {}").format(os.path.basename(filelocation)))
         self.loadModelData(numpyfile, os.path.basename(filelocation), filelocation)
         self.ui.modelTreeWidget.expandAll()

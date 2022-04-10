@@ -20,7 +20,7 @@ class FeatureAttributeTable(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_AttributeTable()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/File_Table.png'))
+        self.setWindowIcon(QIcon('icons:File_Table.png'))
         self.featPath = feature_path
         self.setWindowTitle(self.tr("Attribute Table - {}").format(self.featPath))
         self.feature = ogr.Open(self.featPath)
@@ -35,14 +35,14 @@ class FeatureAttributeTable(QMainWindow):
         self.ui.tableView.setAlternatingRowColors(True)
         self.toolbar = self.ui.toolBar
         actionFeatureInfo = QAction(
-            QIcon(":/icons/Icons/Properties_bw.png"),
+            QIcon("icons:Properties_bw.png"),
             self.tr('Feature info'),
             self)
         actionFeatureInfo.triggered.connect(self.featureInfo)
         self.toolbar.addAction(actionFeatureInfo)
 
         actionExport = QAction(
-            QIcon(":/icons/Icons/OpenInExcel.png"),
+            QIcon("icons:OpenInExcel.png"),
             self.tr('Save Attribute Table as xlsx-file'),
             self)
         actionExport.triggered.connect(self.exportTable)

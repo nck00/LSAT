@@ -48,14 +48,14 @@ class LogRegression(QMainWindow):
 
         self.toolbar = self.ui.toolBar
         self.actionAdvancedSettings = QAction(
-            QIcon(':/icons/Icons/Settings.png'),
+            QIcon('icons:Settings.png'),
             self.tr("Advanced Settings"),
             self)
         self.actionAdvancedSettings.triggered.connect(self.on_AdvancedSettings)
         self.toolbar.addAction(self.actionAdvancedSettings)
 
         self.actionShowResults = QAction(
-            QIcon(':/icons/Icons/Chart_Bar_Big.png'),
+            QIcon('icons:Chart_Bar_Big.png'),
             self.tr("Show Results"),
             self)
         self.actionShowResults.triggered.connect(self.on_showResults)
@@ -63,7 +63,7 @@ class LogRegression(QMainWindow):
         self.toolbar.addAction(self.actionShowResults)
 
         self.actionCreateReport = QAction(
-            QIcon(':/icons/Icons/WordReport.png'),
+            QIcon('icons:WordReport.png'),
             self.tr("Create Report"),
             self)
         self.actionCreateReport.triggered.connect(self.on_createReport)

@@ -25,7 +25,7 @@ class LookupRaster(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_LookupRaster()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/lookup.png'))
+        self.setWindowIcon(QIcon('icons:lookup.png'))
         self.ui.progress = QProgressBar()
         self.ui.progress.setTextVisible(False)
         self.ui.statusbar.addPermanentWidget(self.ui.progress)

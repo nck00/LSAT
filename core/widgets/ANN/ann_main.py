@@ -42,14 +42,14 @@ class ann(QMainWindow):
         self.toolbar = QToolBar()
         self.addToolBar(self.toolbar)
         self.actionAdvancedSettings = QAction(
-            QIcon(':/icons/Icons/Settings.png'),
+            QIcon('icons:Settings.png'),
             self.tr("Advanced Settings"),
             self)
         self.actionAdvancedSettings.triggered.connect(self.on_advset)
         self.toolbar.addAction(self.actionAdvancedSettings)
 
         self.actionShowResults = QAction(
-            QIcon(':/icons/Icons/Chart_Bar_Big.png'),
+            QIcon('icons:Chart_Bar_Big.png'),
             self.tr("Show Results"),
             self)
         self.actionShowResults.triggered.connect(self.on_showResults)
@@ -57,7 +57,7 @@ class ann(QMainWindow):
         self.toolbar.addAction(self.actionShowResults)
 
         self.actionCreateReport = QAction(
-            QIcon(':/icons/Icons/WordReport.png'),
+            QIcon('icons:WordReport.png'),
             self.tr("Create Report"),
             self)
         self.actionCreateReport.triggered.connect(self.on_createReport)
@@ -77,7 +77,7 @@ class ann(QMainWindow):
         self.filloutputlineedit(project_path)
 
         # Add icons to buttons and Window
-        self.setWindowIcon(QIcon(":/icons/Icons/ann.png"))
+        self.setWindowIcon(QIcon("icons:ann.png"))
         self.ui.addrasterPushButton.setText("")
         self.ui.addrasterPushButton.setIcon(QIcon(":icons/Icons/plus.png"))
         self.ui.removerasterPushButton.setText("")

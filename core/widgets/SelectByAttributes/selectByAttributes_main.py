@@ -29,7 +29,7 @@ class SelectByAttributes(QMainWindow):
         self.fileDialog = CustomFileDialog()
         self.projectLocation = projectLocation
         self.setWindowTitle(self.tr("Subset By Attributes"))
-        self.setWindowIcon(QIcon(':/icons/Icons/SelectByAttributes.png'))
+        self.setWindowIcon(QIcon('icons:SelectByAttributes.png'))
         self.progress = QProgressBar()
         self.ui.statusbar.addPermanentWidget(self.progress)
 

@@ -23,7 +23,7 @@ class FeatureInfo(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_FeatureInfo()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/featureInfo.png"))
+        self.setWindowIcon(QIcon("icons:featureInfo.png"))
 
         self.path = featurePath
         self.setWindowTitle(self.tr("Feature info - {}").format(os.path.basename(self.path)))

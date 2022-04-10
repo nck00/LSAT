@@ -65,7 +65,7 @@ class MainFrame(QMainWindow):
         self.ui.setupUi(self)
 
         # Set the window icon
-        self.setWindowIcon(QIcon(':/icons/Icons/LSATLogo.png'))
+        self.setWindowIcon(QIcon('icons:LSATLogo.png'))
 
         # SET IMPORTED core.widgets
         self.fileDialog = FileDialog()
@@ -85,15 +85,15 @@ class MainFrame(QMainWindow):
 
         # Set actions
         # set icons to menubar actions
-        openProjectIcon = QtGui.QIcon(':/icons/Icons/open_project.png')
+        openProjectIcon = QtGui.QIcon('icons:open_project.png')
         self.ui.actionOpen_Project.setIcon(openProjectIcon)
         self.ui.actionOpen_Project.triggered.connect(self.on_open_project)
 
-        newProjectIcon = QtGui.QIcon(':/icons/Icons/new_project.png')
+        newProjectIcon = QtGui.QIcon('icons:new_project.png')
         self.ui.actionNew_Project.setIcon(newProjectIcon)
         self.ui.actionNew_Project.triggered.connect(self.createNewProject)
 
-        exitIcon = QtGui.QIcon(':/icons/Icons/backDoor.png')
+        exitIcon = QtGui.QIcon('icons:backDoor.png')
         self.ui.actionExit.setIcon(exitIcon)
         self.ui.actionExit.triggered.connect(self.on_exit)
 
@@ -108,7 +108,7 @@ class MainFrame(QMainWindow):
         projectPane = projectTab.addRibbonPane(self.tr("Project"))
         self.newProject_action = self.add_action(
             self.tr("New Project"),
-            QIcon(':/icons/Icons/new_project.png'),
+            QIcon('icons:new_project.png'),
             self.tr("New Project"),
             True,
             self.createNewProject,
@@ -117,7 +117,7 @@ class MainFrame(QMainWindow):
 
         self.openProject_action = self.add_action(
             self.tr("Open Project"),
-            QIcon(':/icons/Icons/open_project.png'),
+            QIcon('icons:open_project.png'),
             self.tr("Open Project"),
             True,
             self.on_open_project,
@@ -126,7 +126,7 @@ class MainFrame(QMainWindow):
 
         self.info_action = self.add_action(
             self.tr("Project Info"),
-            QIcon(':/icons/Icons/project_info.png'),
+            QIcon('icons:project_info.png'),
             self.tr("Info"),
             True,
             self.on_projectInfo,
@@ -150,7 +150,7 @@ class MainFrame(QMainWindow):
         settingsPane = projectTab.addRibbonPane(self.tr("Settings"), "Vertical")
         self.language_action = self.add_action(
             self.tr("Language"),
-            QIcon(':/icons/Icons/language.png'),
+            QIcon('icons:language.png'),
             self.tr("Language"),
             True,
             self.on_languageSettings,
@@ -160,7 +160,7 @@ class MainFrame(QMainWindow):
 
         # Help
         manualPane = projectTab.addRibbonPane(self.tr("Help"), "Horizontal")
-        self.manual_action = self.add_action(self.tr("Manual"), QIcon(':/icons/Icons/Book.png'),
+        self.manual_action = self.add_action(self.tr("Manual"), QIcon('icons:Book.png'),
                                              self.tr("Manual"), True, self.on_manual, None)
         manualPane.addRibbonWidget(QRibbonButton(self, self.manual_action))
 
@@ -171,13 +171,13 @@ class MainFrame(QMainWindow):
         importPane = dataTab.addRibbonPane(self.tr("Import"), "Horizontal")
 
         self.importRasterData_action = self.add_action(self.tr("Import Raster"),
-                                                       QIcon(':/icons/Icons/LoadRaster_bw.png'),
+                                                       QIcon('icons:LoadRaster_bw.png'),
                                                        self.tr("Import raster"), True,
                                                        self.on_importRasterData, None)
         importPane.addRibbonWidget(QRibbonButton(self, self.importRasterData_action))
 
         self.importFeatureData_action = self.add_action(self.tr("Import Inventory"),
-                                                        QIcon(':/icons/Icons/ImportFeature_bw.png'),
+                                                        QIcon('icons:ImportFeature_bw.png'),
                                                         self.tr("Import feature"), True,
                                                         self.on_importFeatureData, None)
         importPane.addRibbonWidget(QRibbonButton(self, self.importFeatureData_action))
@@ -185,14 +185,14 @@ class MainFrame(QMainWindow):
         # Preprocessing
         preprocessingPane = dataTab.addRibbonPane(self.tr("Vector Tools"), "Vertical")
         self.random_subset_action = self.add_action(self.tr("Random Sampling"),
-                                                    QIcon(':/icons/Icons/random_subset.png'),
+                                                    QIcon('icons:random_subset.png'),
                                                     self.tr("Random Subset"),
                                                     True, self.on_random_sampling, None)
         preprocessingPane.addRibbonWidget(QRibbonButton(
             self, self.random_subset_action, "SmallButton"), (0, 0, 1, 1))
 
         self.temporal_subset_action = self.add_action(self.tr("Subset By Attributes"),
-                                                      QIcon(':/icons/Icons/SelectByAttributes.png'),
+                                                      QIcon('icons:SelectByAttributes.png'),
                                                       self.tr("Subset By Attributes"), True,
                                                       self.on_selectByAttributes)
         preprocessingPane.addRibbonWidget(QRibbonButton(
@@ -200,7 +200,7 @@ class MainFrame(QMainWindow):
 
         self.geoprocessingTools_action = self.add_action(
             self.tr("Geoprocessing Tools"),
-            QIcon(':/icons/Icons/GeoprocessingTools.png'),
+            QIcon('icons:GeoprocessingTools.png'),
             self.tr("Geoprocessing Tools"),
             True,
             self.on_geoprocessingTools,
@@ -210,14 +210,14 @@ class MainFrame(QMainWindow):
 
         # DEM Tools
         demToolsPane = dataTab.addRibbonPane(self.tr("DEM Tools"), "Vertical")
-        self.slope_action = self.add_action(self.tr("Slope"), QIcon(':/icons/Icons/Slope.png'),
+        self.slope_action = self.add_action(self.tr("Slope"), QIcon('icons:Slope.png'),
                                             self.tr("Slope"), True, self.on_calcSlope, None)
         demToolsPane.addRibbonWidget(QRibbonButton(
             self, self.slope_action, "SmallButton"), (0, 0, 1, 1))
 
         self.aspect_action = self.add_action(
             self.tr("Aspect"),
-            QIcon(':/icons/Icons/aspect.png'),
+            QIcon('icons:aspect.png'),
             self.tr("Aspect"),
             True,
             self.on_aspect,
@@ -227,7 +227,7 @@ class MainFrame(QMainWindow):
 
         self.hillshade_action = self.add_action(
             self.tr("Hillshade"),
-            QIcon(':/icons/Icons/hillshade.png'),
+            QIcon('icons:hillshade.png'),
             self.tr("Hillshade"),
             True,
             self.on_hillshade,
@@ -237,7 +237,7 @@ class MainFrame(QMainWindow):
 
         self.tpi_action = self.add_action(
             self.tr("TPI"),
-            QIcon(':/icons/Icons/tpi.png'),
+            QIcon('icons:tpi.png'),
             self.tr("Topographic Position Index"),
             True,
             self.on_tpi,
@@ -247,7 +247,7 @@ class MainFrame(QMainWindow):
 
         self.roughness_action = self.add_action(
             self.tr("Roughness"),
-            QIcon(':/icons/Icons/roughness.png'),
+            QIcon('icons:roughness.png'),
             self.tr("Roughness"),
             True,
             self.on_roughness,
@@ -257,7 +257,7 @@ class MainFrame(QMainWindow):
 
         self.tri_action = self.add_action(
             self.tr("TRI"),
-            QIcon(':/icons/Icons/TRI.png'),
+            QIcon('icons:TRI.png'),
             self.tr("Terrain Ruggedness Index"),
             True,
             self.on_tri,
@@ -268,7 +268,7 @@ class MainFrame(QMainWindow):
         # Spatial Tools
         spatialToolsPane = dataTab.addRibbonPane(self.tr("Raster Tools"), "Vertical")
         self.euclDist_action = self.add_action(self.tr("Euclidean distance"),
-                                               QIcon(':/icons/Icons/EuclideanDist.png'),
+                                               QIcon('icons:EuclideanDist.png'),
                                                self.tr("Euclidean Distance"), True,
                                                self.on_euclideanDistance, None)
         spatialToolsPane.addRibbonWidget(QRibbonButton(
@@ -276,7 +276,7 @@ class MainFrame(QMainWindow):
 
         self.contingency_action = self.add_action(
             self.tr("Contingency Analysis"),
-            QIcon(':/icons/Icons/Contingency_tab.png'),
+            QIcon('icons:Contingency_tab.png'),
             self.tr("Contingency"),
             True,
             self.on_contingency,
@@ -286,7 +286,7 @@ class MainFrame(QMainWindow):
 
         self.combine_action = self.add_action(
             self.tr("Combine"),
-            QIcon(':/icons/Icons/model.png'),
+            QIcon('icons:model.png'),
             self.tr("Combine"),
             True,
             self.on_combine,
@@ -296,7 +296,7 @@ class MainFrame(QMainWindow):
 
         self.reclassify_action = self.add_action(
             self.tr("Reclassify"),
-            QIcon(':/icons/Icons/reclassify.png'),
+            QIcon('icons:reclassify.png'),
             self.tr("Reclassify"),
             True,
             self.on_reclassify,
@@ -306,7 +306,7 @@ class MainFrame(QMainWindow):
 
         self.lookup_action = self.add_action(
             self.tr("Lookup"),
-            QIcon(':/icons/Icons/lookup.png'),
+            QIcon('icons:lookup.png'),
             self.tr("Lookup raster"),
             True,
             self.on_lookup,
@@ -316,7 +316,7 @@ class MainFrame(QMainWindow):
 
         self.sensreclass_action = self.add_action(
             self.tr("Sens Reclass"),
-            QIcon(':/icons/Icons/SensitivityReclass.png'),
+            QIcon('icons:SensitivityReclass.png'),
             self.tr("Sensitivity Reclassification"),
             True,
             self.on_sensreclass,
@@ -327,7 +327,7 @@ class MainFrame(QMainWindow):
         # GEO VIEWER
         viewPane = dataTab.addRibbonPane(self.tr("Viewer"), "Horizontal")
         self.geoViewer_action = self.add_action(self.tr("Geodata Viewer"), QIcon(
-            ':/icons/Icons/geoviewer.png'), self.tr("Viewer"), True, self.dataViewer, None)
+            'icons:geoviewer.png'), self.tr("Viewer"), True, self.dataViewer, None)
         viewPane.addRibbonWidget(QRibbonButton(self, self.geoViewer_action))
 
         # ribbon Analysis tab
@@ -335,13 +335,13 @@ class MainFrame(QMainWindow):
 
         # Analysis
         analysisPane = analysisTab.addRibbonPane(self.tr("Analysis"), "Horizontal")
-        self.wofe_action = self.add_action(self.tr("WofE"), QIcon(':/icons/Icons/cond_prob.png'),
+        self.wofe_action = self.add_action(self.tr("WofE"), QIcon('icons:cond_prob.png'),
                                            self.tr("Weight of Evidence"), True, self.on_wofe, None)
         analysisPane.addRibbonWidget(QRibbonButton(self, self.wofe_action))
 
         self.LR_action = self.add_action(
             self.tr("LR"),
-            QIcon(':/icons/Icons/logisticReg.png'),
+            QIcon('icons:logisticReg.png'),
             self.tr("Logistic Regression"),
             True,
             self.on_logisticRegression,
@@ -350,7 +350,7 @@ class MainFrame(QMainWindow):
 
         self.ANN_action = self.add_action(
             self.tr("ANN"),
-            QIcon(':/icons/Icons/ann.png'),
+            QIcon('icons:ann.png'),
             self.tr("Artificial Neural Network"),
             True,
             self.on_ann,
@@ -359,7 +359,7 @@ class MainFrame(QMainWindow):
 
         self.AHP_action = self.add_action(
             self.tr("AHP"),
-            QIcon(':/icons/Icons/ahp.png'),
+            QIcon('icons:ahp.png'),
             self.tr("Analytical Hierarchy Process"),
             True,
             self.on_ahp,
@@ -370,7 +370,7 @@ class MainFrame(QMainWindow):
         analysisPane = analysisTab.addRibbonPane(self.tr("Model Management"), "Horizontal")
         self.modelbuilder_action = self.add_action(
             self.tr("Model Builder"),
-            QIcon(':/icons/Icons/model_builder.png'),
+            QIcon('icons:model_builder.png'),
             self.tr("Model Builder"),
             True,
             self.on_modelbuilder,
@@ -379,7 +379,7 @@ class MainFrame(QMainWindow):
 
         self.zoning_action = self.add_action(
             self.tr("Zoning"),
-            QIcon(':/icons/Icons/zoning.png'),
+            QIcon('icons:zoning.png'),
             self.tr("Zoning"),
             True,
             self.on_zoning,

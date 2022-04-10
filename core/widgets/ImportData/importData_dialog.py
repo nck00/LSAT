@@ -16,7 +16,7 @@ class ReprojectionSettings(QDialog):
         super().__init__()
         self.ui = Ui_ProjectionSettings()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/LoadRaster_bw.png'))
+        self.setWindowIcon(QIcon('icons:LoadRaster_bw.png'))
         rasterInfo = RasterInfo(rasterpath)
         self.ui.inputRasterInfoGroupBoxGridLayout.addWidget(rasterInfo)
         maskInfo = RasterInfo(maskpath)

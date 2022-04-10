@@ -21,7 +21,7 @@ class EuclideanDistance(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_EuclideanDistanceForm()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/EuclideanDist.png'))
+        self.setWindowIcon(QIcon('icons:EuclideanDist.png'))
         self.setWindowTitle(self.tr("Euclidean Distance"))
         self.progress = QProgressBar()
         self.statusBar().addPermanentWidget(self.progress)

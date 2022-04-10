@@ -22,9 +22,9 @@ class ProjectInfo(QMainWindow):
         # ui
         self.ui = Ui_ProjectInfo()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/project_info.png"))
-        self.ui.saveToolButton.setIcon(QIcon(':/icons/Icons/SaveEdits.png'))
-        self.ui.loadToolButton.setIcon(QIcon(':/icons/Icons/plus.png'))
+        self.setWindowIcon(QIcon("icons:project_info.png"))
+        self.ui.saveToolButton.setIcon(QIcon('icons:SaveEdits.png'))
+        self.ui.loadToolButton.setIcon(QIcon('icons:plus.png'))
         self.ui.progress = QProgressBar()
         self.ui.progress.setTextVisible(False)
         self.ui.statusbar.addPermanentWidget(self.ui.progress)

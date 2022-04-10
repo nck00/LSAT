@@ -13,7 +13,7 @@ import logging
 class Messenger(QMainWindow):
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
-        self.setWindowIcon(QIcon(':/icons/Icons/News.png'))
+        self.setWindowIcon(QIcon('icons:News.png'))
 
     def AnalysisCompleted(self):
         QMessageBox.information(self, self.tr("Analysis completed!"),

@@ -31,7 +31,7 @@ class ImportInventory(QMainWindow):
         self.ui.setupUi(self)
         self.ui.sizeValueLineEdit.textChanged.connect(self.val_sizeValue)
         self.ui.sizeValueLineEdit.setText(str(self.ui.sizeValueHorizontalSlider.value()))
-        self.setWindowIcon(QIcon(':/icons/Icons/ImportFeature.png'))
+        self.setWindowIcon(QIcon('icons:ImportFeature.png'))
         self.progress = QProgressBar()
         self.statusBar().addPermanentWidget(self.progress)
         # connect

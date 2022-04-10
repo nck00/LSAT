@@ -28,7 +28,7 @@ class ResultViewerWofE(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
         self.setWindowTitle(self.tr("Results for {}").format(layerName))
         self.loadModelData(path, result)
         self.ui.modelTreeWidget.expandAll()

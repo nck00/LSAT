@@ -24,7 +24,7 @@ class Subsampling(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_RandomSampling()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/random_subset.png'))
+        self.setWindowIcon(QIcon('icons:random_subset.png'))
 
         self.ui.sizeTrainingLineEdit.textChanged.connect(self.val_sizeValue)
         self.ui.sizeTrainingLineEdit.setText("80")

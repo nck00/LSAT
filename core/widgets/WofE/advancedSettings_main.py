@@ -23,7 +23,7 @@ class AdvancedSettings(QMainWindow):
         self.ui.sampleSizeLineEdit.setText(str(self.ui.sampleSizeSlider.value()))
         self.ui.sampleSizeLineEdit.textEdited.connect(self.on_sampleSizeLineEdit_textEdited)
         self.ui.sampleSizeLineEdit.setValidator(validatorInt)
-        self.setWindowIcon(QIcon(':/icons/Icons/Settings.png'))
+        self.setWindowIcon(QIcon('icons:Settings.png'))
 
     def on_sampleSizeSlider_valueChanged(self):
         self.ui.sampleSizeLineEdit.setText(str(self.ui.sampleSizeSlider.value()))

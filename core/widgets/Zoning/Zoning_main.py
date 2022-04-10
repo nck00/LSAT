@@ -30,9 +30,9 @@ class Zoning(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_ZoningGUI()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/zoning.png'))
-        self.ui.addRowToolButton.setIcon(QIcon(':/icons/Icons/plus.png'))
-        self.ui.deleteRowToolButton.setIcon(QIcon(':/icons/Icons/minus.png'))
+        self.setWindowIcon(QIcon('icons:zoning.png'))
+        self.ui.addRowToolButton.setIcon(QIcon('icons:plus.png'))
+        self.ui.deleteRowToolButton.setIcon(QIcon('icons:minus.png'))
 
         # custom file dialog
         self.fileDialog = FileDialog(parent=self)

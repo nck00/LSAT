@@ -16,7 +16,7 @@ class LanguageSettings(QMainWindow):
         self.ui = Ui_LanguageSettings()
         self.ui.setupUi(self)
         self.setWindowTitle(self.tr("Language Settings"))
-        self.setWindowIcon(QIcon(':/icons/Icons/language.png'))
+        self.setWindowIcon(QIcon('icons:language.png'))
         self.config = configuration.Configuration()
         language = self.config.getLanguage()
         idx = self.ui.comboBox.findText(str(language))

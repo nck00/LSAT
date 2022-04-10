@@ -24,7 +24,7 @@ class RasterInfo(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_RasterInfo()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/raster_info.png"))
+        self.setWindowIcon(QIcon("icons:raster_info.png"))
 
         self.path = rasterPath
         self.setWindowTitle(self.tr("Raster info - {}").format(os.path.basename(self.path)))

@@ -19,10 +19,10 @@ class ContingencyGUI(QMainWindow):
         self.ui = Ui_Contingency()
         self.ui.setupUi(self)
         # Adding Icons to the buttons
-        self.setWindowIcon(QIcon(':/icons/Icons/Contingency_tab.png'))
-        self.ui.addRasterToolButton.setIcon(QIcon(':/icons/Icons/plus.png'))
-        self.ui.removeRasterToolButton.setIcon(QIcon(':/icons/Icons/minus.png'))
-        self.ui.attributeTableToolButton.setIcon(QIcon(':/icons/Icons/AttributeTable.png'))
+        self.setWindowIcon(QIcon('icons:Contingency_tab.png'))
+        self.ui.addRasterToolButton.setIcon(QIcon('icons:plus.png'))
+        self.ui.removeRasterToolButton.setIcon(QIcon('icons:minus.png'))
+        self.ui.attributeTableToolButton.setIcon(QIcon('icons:AttributeTable.png'))
 
         self.dialog = CustomFileDialog()
         self.progress = QProgressBar()

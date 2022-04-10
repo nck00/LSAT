@@ -19,7 +19,7 @@ class ImportRasterData(QMainWindow):
         # ui
         self.ui = Ui_ImportRasterData()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/LoadRaster_bw.png'))
+        self.setWindowIcon(QIcon('icons:LoadRaster_bw.png'))
         self.ui.maskRasterLineEdit.setText(self.maskpath)
         self.ui.outputLocationLineEdit.setText(self.paramspath)
         # Can't add Progressbar to Statusbar with Qt Designer

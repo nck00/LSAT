@@ -29,7 +29,7 @@ class SensitivityReclass(QMainWindow):
         self.projectPath = projectPath
         self.dialog = CustomFileDialog()
         self.msg = msg()
-        self.setWindowIcon(QIcon(":/icons/Icons/SensitivityReclass.png"))
+        self.setWindowIcon(QIcon("icons:SensitivityReclass.png"))
         self.progressBar = QProgressBar()
         self.statusBar().addPermanentWidget(self.progressBar)
         self.fig = Figure(facecolor="white")

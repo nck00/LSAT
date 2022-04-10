@@ -28,9 +28,9 @@ class ContingencyMatrix(QMainWindow):
         self.ui = Ui_ContingencyMatrix()
         self.ui.setupUi(self)
         self.setWindowTitle(self.tr("Contingency - {}").format(str(fname)))
-        self.setWindowIcon(QIcon(':/icons/Icons/Contingency_tab.png'))
+        self.setWindowIcon(QIcon('icons:Contingency_tab.png'))
         self.export2excelToolButton = QToolButton()
-        self.export2excelToolButton.setIcon(QIcon(':/icons/Icons/OpenInExcel.png'))
+        self.export2excelToolButton.setIcon(QIcon('icons:OpenInExcel.png'))
         self.toolBar = QToolBar()
         self.addToolBar(self.toolBar)
         self.toolBar.addWidget(self.export2excelToolButton)
@@ -118,7 +118,7 @@ class ContingencyResults(QMainWindow):
         self.msg = Messenger()
 
         self.export2excelToolButton = QToolButton()
-        self.export2excelToolButton.setIcon(QIcon(':/icons/Icons/OpenInExcel.png'))
+        self.export2excelToolButton.setIcon(QIcon('icons:OpenInExcel.png'))
         self.toolBar.addWidget(self.export2excelToolButton)
 
         self.export2excelToolButton.clicked.connect(self.exportTable)

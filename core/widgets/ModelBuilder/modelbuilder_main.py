@@ -32,9 +32,9 @@ class ModelBuilder(QMainWindow):
         # ui
         self.ui = Ui_ModelBuilder()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/model_builder.png"))
-        self.ui.actionAdvanced_Settings.setIcon(QIcon(":/icons/Icons/Settings.png"))
-        self.ui.expressionToolButton.setIcon(QIcon(":/icons/Icons/File_Table.png"))
+        self.setWindowIcon(QIcon("icons:model_builder.png"))
+        self.ui.actionAdvanced_Settings.setIcon(QIcon("icons:Settings.png"))
+        self.ui.expressionToolButton.setIcon(QIcon("icons:File_Table.png"))
         # connect signals
         self.ui.modelsTreeWidget.itemChanged.connect(self.redrawplot)
         self.ui.modelsTreeWidget.itemSelectionChanged.connect(self.modelselectionchanged)
@@ -238,21 +238,21 @@ class ModelBuilder(QMainWindow):
         """
         menu = QMenu()
         actionModel2raster = QAction(
-            QIcon(":/icons/Icons/WriteRaster.png"),
+            QIcon("icons:WriteRaster.png"),
             self.tr("Model to Raster"),
             None)
         menu.addAction(actionModel2raster)
         actionModel2raster.triggered.connect(self.on_WriteRastertoolButton_clicked)
         actionModelinfo = QAction(
-            QIcon(":/icons/Icons/model_info.png"),
+            QIcon("icons:model_info.png"),
             self.tr("Model Info"),
             None)
         menu.addAction(actionModelinfo)
         actionModelinfo.triggered.connect(self.on_ModelInfotoolButton_clicked)
-        actionDelete = QAction(QIcon(":/icons/Icons/Trashbox.png"), self.tr("Delete Model"), None)
+        actionDelete = QAction(QIcon("icons:Trashbox.png"), self.tr("Delete Model"), None)
         menu.addAction(actionDelete)
         actionDelete.triggered.connect(self.on_DeleteModeltoolButton_clicked)
-        actionZonation = QAction(QIcon(":/icons/Icons/zoning.png"), self.tr("Zonation"), None)
+        actionZonation = QAction(QIcon("icons:zoning.png"), self.tr("Zonation"), None)
         menu.addAction(actionZonation)
         actionZonation.triggered.connect(self.on_ZoningtoolButton_clicked)
         menu.exec_(QCursor.pos())
@@ -330,7 +330,7 @@ class ModelBuilder(QMainWindow):
         """
         item = QTreeWidgetItem()
         if npz:  # npz found
-            item.setIcon(0, QIcon(":/icons/Icons/check.png"))
+            item.setIcon(0, QIcon("icons:check.png"))
             result = np.load(npz)
             if "auc" in result:
                 if result["auc"].shape == ():
@@ -339,7 +339,7 @@ class ModelBuilder(QMainWindow):
                     auc = result["auc"].mean()
                 item.setText(1, str(np.round(auc, 2)))
         else:  # npz not found
-            item.setIcon(0, QIcon(":/icons/Icons/Warning.png"))
+            item.setIcon(0, QIcon("icons:Warning.png"))
         layer = RasterLayer(os.path.join(path, file))
         item.setText(0, layer.name)
         self.ui.woeLayerTreeWidget.addTopLevelItem(item)
@@ -402,9 +402,9 @@ class ModelBuilder(QMainWindow):
         item.setCheckState(0, initialcheck)
         if model["samplecount"] > 1:  # Model has a range
             item.setCheckState(4, initialcheck)
-            item.setIcon(0, QIcon(":/icons/Icons/Modeler.png"))
+            item.setIcon(0, QIcon("icons:Modeler.png"))
         else:  # Model was calculated with only one sample
-            item.setIcon(0, QIcon(":/icons/Icons/Modeler_grey.png"))
+            item.setIcon(0, QIcon("icons:Modeler_grey.png"))
         self.ui.modelsTreeWidget.addTopLevelItem(item)
         if initialcheck == Qt.Checked:
             self.redrawplot(item)

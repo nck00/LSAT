@@ -23,7 +23,7 @@ class CombineGUI(QMainWindow):
         # ui
         self.ui = Ui_Combine()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/model.png'))
+        self.setWindowIcon(QIcon('icons:model.png'))
         self.ui.addToolButton.setIcon(QIcon(":icons/Icons/plus.png"))
         self.ui.removeToolButton.setIcon(QIcon(":icons/Icons/minus.png"))
         self.ui.setAsMaskToolButton.setIcon(QIcon(":icons/Icons/mask.png"))

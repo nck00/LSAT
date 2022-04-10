@@ -15,7 +15,7 @@ class ResultsForm(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_tabbedResultViewer()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
         name = os.path.basename(path)
         self.setWindowTitle(self.tr("Results - {}").format(name))
         self.tree = self.ui.modelTreeWidget

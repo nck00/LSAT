@@ -20,7 +20,7 @@ class ann_advset(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_ANN_advset()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Settings.png'))
+        self.setWindowIcon(QIcon('icons:Settings.png'))
         self.ini_path = os.path.join(os.getcwd(), "core", "widgets", "ANN", "ann_config.ini")
         if not os.path.isfile(self.ini_path):
             # If the .ini file does not exist, we create it.

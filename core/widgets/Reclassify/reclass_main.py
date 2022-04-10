@@ -42,7 +42,7 @@ class Reclass(QMainWindow):
         self.fileDialog = CustomFileDialog()
 
         # Set the window icon
-        self.setWindowIcon(QIcon(':/icons/Icons/reclassify.png'))
+        self.setWindowIcon(QIcon('icons:reclassify.png'))
 
         # Set figure
         self.fig = Figure(facecolor='white')

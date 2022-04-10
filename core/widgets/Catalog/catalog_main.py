@@ -32,7 +32,7 @@ class Catalog(QDockWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle(self.tr("Catalog"))
-        self.setFeatures(QDockWidget.DockWidgetMovable | QDockWidget.DockWidgetFloatable)
+        # self.setFeatures(QDockWidget.DockWidgetMovable | QDockWidget.DockWidgetFloatable)
         self.model = QFileSystemModel()
         self.view = TreeView()  # QTreeView with SizeHint
         self.view.setStyleSheet("QHeaderView::section { background-color:#b7cbeb }")
@@ -75,56 +75,56 @@ class Catalog(QDockWidget):
             menu = QMenu()
             if fileInfo.isDir():
                 openExplorerAction = QAction(
-                    QIcon(':/icons/Icons/Properties_bw.png'),
+                    QIcon('icons:Properties_bw.png'),
                     self.tr('Open Explorer here'),
                     None)
                 menu.addAction(openExplorerAction)
                 openExplorerAction.triggered.connect(self.openExplorer)
             else:
-                actionDelete = QAction(QIcon(':/icons/Icons/Trashbox.png'), self.tr('Delete'), None)
+                actionDelete = QAction(QIcon('icons:Trashbox.png'), self.tr('Delete'), None)
                 menu.addAction(actionDelete)
                 actionDelete.triggered.connect(self.deleteFile)
 
                 if ext in [".shp", ".kml", ".tif", ".geojson"]:
                     attributeTableAction = QAction(
-                        QIcon(':/icons/Icons/AttributeTable.png'), self.tr('Attribute Table'), None)
+                        QIcon('icons:AttributeTable.png'), self.tr('Attribute Table'), None)
                     menu.addAction(attributeTableAction)
                     attributeTableAction.triggered.connect(self.showAttributeTable)
 
                     if ext == '.tif':
                         viewDataAction = QAction(
-                            QIcon(':/icons/Icons/geoviewer.png'), self.tr('View Data'), None)
+                            QIcon('icons:geoviewer.png'), self.tr('View Data'), None)
                         menu.addAction(viewDataAction)
                         viewDataAction.triggered.connect(self.dataViewerFromContextMenu)
 
                         layerPropertiesAction = QAction(
-                            QIcon(':/icons/Icons/Properties_bw.png'), self.tr('Properties'), None)
+                            QIcon('icons:Properties_bw.png'), self.tr('Properties'), None)
                         layerPropertiesAction.triggered.connect(self.showRasterInfo)
                         menu.addAction(layerPropertiesAction)
 
                     else:
                         layerPropertiesAction = QAction(
-                            QIcon(':/icons/Icons/Properties_bw.png'), self.tr('Properties'), None)
+                            QIcon('icons:Properties_bw.png'), self.tr('Properties'), None)
                         layerPropertiesAction.triggered.connect(self.showFeatureInfo)
                         menu.addAction(layerPropertiesAction)
 
                 if ext == ".docx":
                     openDocumentAction = QAction(
-                        QIcon(':/icons/Icons/File_Doc_Text_Word.png'), self.tr('Open Document'), None)
+                        QIcon('icons:File_Doc_Text_Word.png'), self.tr('Open Document'), None)
                     menu.addAction(openDocumentAction)
                     self.docfilename = fname
                     openDocumentAction.triggered.connect(self.openWordDocument)
 
                 if ext == ".xlsx":
                     openXlsxDocumentAction = QAction(
-                        QIcon(':/icons/Icons/File_XLS_Excel.png'), self.tr('Open Excel Document'), None)
+                        QIcon('icons:File_XLS_Excel.png'), self.tr('Open Excel Document'), None)
                     menu.addAction(openXlsxDocumentAction)
                     self.xlsxfilename = fname
                     openXlsxDocumentAction.triggered.connect(self.openExcelDocument)
 
                 if os.path.basename(os.path.dirname(fname)) == "tables" and ext == ".npz":
                     createReportAction = QAction(
-                        QIcon(':/icons/Icons/WordReport.png'),
+                        QIcon('icons:WordReport.png'),
                         self.tr('Create Analysis Report...'),
                         None)
                     menu.addAction(createReportAction)
@@ -134,20 +134,20 @@ class Catalog(QDockWidget):
                 if os.path.basename(
                         os.path.dirname(fname)) == "susceptibility_maps" and ext == ".npz":
                     modelInfoAction = QAction(
-                        QIcon(':/icons/Icons/model_info.png'), self.tr('Model Info'), None)
+                        QIcon('icons:model_info.png'), self.tr('Model Info'), None)
                     menu.addAction(modelInfoAction)
                     self.resultFile = fname
                     modelInfoAction.triggered.connect(self.showModelInfo)
 
                 if (os.path.basename(os.path.dirname(fname)) == "tables" and ext == ".npz"):
                     showResultsAction = QAction(
-                        QIcon(':/icons/Icons/Chart_Bar_Big.png'), self.tr('Show Results'), None)
+                        QIcon('icons:Chart_Bar_Big.png'), self.tr('Show Results'), None)
                     menu.addAction(showResultsAction)
                     showResultsAction.triggered.connect(self.showResults)
 
                 if (os.path.basename(os.path.dirname(fname)) == "statistics" and ext == ".npz"):
                     showResultsAction = QAction(
-                        QIcon(':/icons/Icons/Chart_Bar_Big.png'), self.tr('Show Results'), None)
+                        QIcon('icons:Chart_Bar_Big.png'), self.tr('Show Results'), None)
                     menu.addAction(showResultsAction)
                     showResultsAction.triggered.connect(self.showResults)
 

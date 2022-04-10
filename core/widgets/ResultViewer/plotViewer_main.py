@@ -84,7 +84,7 @@ class SinglePlot(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_GraphicViewer()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
 
         self.plot = plot
         self.result = result
@@ -328,7 +328,7 @@ class PlotViewer(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_GraphicViewer()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
 
         self.result = result
         labels = PlotFunctions.getLabels(result)

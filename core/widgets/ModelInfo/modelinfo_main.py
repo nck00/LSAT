@@ -16,7 +16,7 @@ class ModelInfo(QMainWindow):
         # ui
         self.ui = Ui_ModelInfo()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/model_info.png"))
+        self.setWindowIcon(QIcon("icons:model_info.png"))
         self.setWindowTitle(self.tr("Model Info - {}").format(model["name"]))
         # Add information
         self.addinfo(model, filepath)

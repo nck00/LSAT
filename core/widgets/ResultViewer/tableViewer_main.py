@@ -68,7 +68,7 @@ class TableViewer(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_TableViewWidget()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(':/icons/Icons/Chart_Bar_Big.png'))
+        self.setWindowIcon(QIcon('icons:Chart_Bar_Big.png'))
         self.fileDialog = CustomFileDialog()
         self.msg = Messenger()
 
@@ -88,14 +88,14 @@ class TableViewer(QMainWindow):
         self.tableView.setStyleSheet("QHeaderView::section { background-color:#b7cbeb }")
 
         self.actionExport = QAction(
-            QIcon(":/icons/Icons/OpenInExcel.png"),
+            QIcon("icons:OpenInExcel.png"),
             self.tr('Export to Excel'),
             self)
         self.actionExport.triggered.connect(self.exportTable)
         self.ui.toolBar.addAction(self.actionExport)
 
         self.actionWriteRaster = QAction(
-            QtGui.QIcon(':/icons/Icons/WriteRaster.png'),
+            QtGui.QIcon('icons:WriteRaster.png'),
             self.tr('Write Raster from Column'),
             self)
         self.actionWriteRaster.triggered.connect(self.writeRasterFromColumn)

@@ -33,7 +33,7 @@ class WofETool(QMainWindow):
         QWidget.__init__(self, parent)
         self.ui = Ui_wofeBatch()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/cond_prob.png"))
+        self.setWindowIcon(QIcon("icons:cond_prob.png"))
 
         # Add icons to buttons
         self.ui.addDataToolButton.setIcon(QIcon(":icons/Icons/plus.png"))
@@ -55,25 +55,25 @@ class WofETool(QMainWindow):
         # Toolbar contaning the basic actions: Settings and Properties
         self.toolbar = self.ui.toolBar
 
-        self.ui.actionAdvanced_Settings.setIcon(QIcon(":/icons/Icons/Settings.png"))
+        self.ui.actionAdvanced_Settings.setIcon(QIcon("icons:Settings.png"))
         self.ui.actionAdvanced_Settings.triggered.connect(self.on_AdvancedSettings)
 
         self.actionSettings = QAction(
-            QIcon(":/icons/Icons/Settings.png"),
+            QIcon("icons:Settings.png"),
             self.tr('Advanced Settings'),
             self)
         self.actionSettings.triggered.connect(self.on_AdvancedSettings)
         self.toolbar.addAction(self.actionSettings)
 
         self.actionProperties = QAction(
-            QIcon(":/icons/Icons/Properties_bw.png"),
+            QIcon("icons:Properties_bw.png"),
             self.tr('Properties'),
             self)
         self.actionProperties.triggered.connect(self.on_Properties)
         self.toolbar.addAction(self.actionProperties)
 
         self.actionShowResults = QAction(
-            QIcon(":/icons/Icons/Chart_Bar_Big.png"),
+            QIcon("icons:Chart_Bar_Big.png"),
             self.tr('Show results'),
             self)
         self.actionShowResults.triggered.connect(self.openResults)
@@ -81,7 +81,7 @@ class WofETool(QMainWindow):
         self.toolbar.addAction(self.actionShowResults)
 
         self.actionCreateReport = QAction(
-            QIcon(":/icons/Icons/WordReport.png"),
+            QIcon("icons:WordReport.png"),
             self.tr('Create report (.docx)'),
             self)
         self.actionCreateReport.setEnabled(False)
@@ -105,15 +105,15 @@ class WofETool(QMainWindow):
         # We build the menu.
         menu = QMenu()
         action_property = menu.addAction(
-            QIcon(":/icons/Icons/Properties_bw.png"),
+            QIcon("icons:Properties_bw.png"),
             self.tr("Properties"))
         action_property.triggered.connect(self.on_Properties)
         action_results = menu.addAction(
-            QIcon(":/icons/Icons/Chart_Bar_Big.png"),
+            QIcon("icons:Chart_Bar_Big.png"),
             self.tr("Show results"))
         action_results.triggered.connect(self.openResults)
         action_report = menu.addAction(
-            QIcon(":/icons/Icons/WordReport.png"),
+            QIcon("icons:WordReport.png"),
             self.tr("Create report (.docx)"))
         action_report.triggered.connect(self.createReport)
         # We only enable Results and Report when the calculation is finished

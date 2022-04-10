@@ -24,7 +24,7 @@ class Viewer(QMainWindow):
         QMainWindow.__init__(self, parent)
         self.ui = Ui_Viewer()
         self.ui.setupUi(self)
-        self.setWindowIcon(QIcon(":/icons/Icons/geoviewer.png"))
+        self.setWindowIcon(QIcon("icons:geoviewer.png"))
         self.ui.progress = QProgressBar()
         self.ui.progress.setTextVisible(False)
         self.ui.statusbar.addPermanentWidget(self.ui.progress)
@@ -42,21 +42,21 @@ class Viewer(QMainWindow):
         self.ui.graphicsView.setScene(self.scene)
         # set actions to toolbar
         actionLoadRaster = QAction(
-            QIcon(":/icons/Icons/LoadRaster_bw.png"),
+            QIcon("icons:LoadRaster_bw.png"),
             self.tr('Load Raster'),
             self)
         actionLoadRaster.triggered.connect(self.openRasterFile)
         self.ui.toolBar.addAction(actionLoadRaster)
-        actionSetLegend = QAction(QIcon(":/icons/Icons/Legend.png"), self.tr('Set Legend'), self)
+        actionSetLegend = QAction(QIcon("icons:Legend.png"), self.tr('Set Legend'), self)
         actionSetLegend.triggered.connect(self.getLegend)
         self.ui.toolBar.addAction(actionSetLegend)
         actionSetBoundingBox = QAction(
-            QIcon(":/icons/Icons/BoundingBox.png"),
+            QIcon("icons:BoundingBox.png"),
             self.tr('Set bounding box'),
             self)
         actionSetBoundingBox.triggered.connect(self.setCoordinateFrame)
         self.ui.toolBar.addAction(actionSetBoundingBox)
-        actionSaveImage = QAction(QIcon(":/icons/Icons/SaveEdits.png"),
+        actionSaveImage = QAction(QIcon("icons:SaveEdits.png"),
                                   self.tr('Export map to Image'), self)
         actionSaveImage.triggered.connect(self.saveMap2Image)
         self.ui.toolBar.addAction(actionSaveImage)
