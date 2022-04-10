@@ -36,7 +36,9 @@ class Catalog(QDockWidget):
         self.model = QFileSystemModel()
         self.view = TreeView()  # QTreeView with SizeHint
         self.view.setStyleSheet("QHeaderView::section { background-color:#b7cbeb }")
-        self.view.header().setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)
+        print("a")
+        # self.view.header().setSectionResizeMode(3, QHeaderView.ResizeMode.Stretch)
+        print("b")
         self.setWidget(self.view)
         self.message = Messenger()
 
