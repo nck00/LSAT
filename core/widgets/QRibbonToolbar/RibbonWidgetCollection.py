@@ -174,7 +174,7 @@ class QRibbonSeparator(QWidget):
     def paintEvent(self, event):
         paint = QPainter()
         paint.begin(self)
-        paint.fillRect(event.rect(), Qt.lightGray)
+        paint.fillRect(event.rect(), QColorConstants.LightGray)
         paint.end()
 
 
