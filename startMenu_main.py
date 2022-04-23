@@ -54,7 +54,7 @@ class MainForm(QMainWindow):
                     else:
                         icon_path = "icons:project_icon.png"
                     pixmap = QPixmap(icon_path)
-                    icon.addPixmap(pixmap, QIcon.Normal, QtGui.QIcon.Off)
+                    icon.addPixmap(pixmap, QIcon.Mode.Normal, QIcon.State.Off)
                     self.comLinkButton.setIcon(icon)
                     self.comLinkButton.setIconSize(QSize(100, 100))
                     self.comLinkButton.clicked.connect(self.Button_clicked)
@@ -188,7 +188,7 @@ def start():
     app.installEventFilter(myapp)
     myapp.showMaximized()
     splash.finish(myapp)
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 if __name__ == "__main__":
     start()

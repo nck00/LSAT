@@ -74,14 +74,14 @@ class MainFrame(QMainWindow):
 
         # Catalog
         self.catalog = Catalog()
-        self.addDockWidget(QtCore.Qt.LeftDockWidgetArea, self.catalog)
+        self.addDockWidget(Qt.DockWidgetArea.LeftDockWidgetArea, self.catalog)
 
         # Main Log
         self.mainLog = LogForm()
         self.dockWidgetLog = QDockWidget(self.tr("Main Log"), self)
-        self.dockWidgetLog.setFeatures(QDockWidget.DockWidgetMovable | QDockWidget.DockWidgetFloatable)
+        self.dockWidgetLog.setFeatures(QDockWidget.DockWidgetFeature.DockWidgetMovable | QDockWidget.DockWidgetFeature.DockWidgetFloatable)
         self.dockWidgetLog.setWidget(self.mainLog)
-        self.addDockWidget(Qt.BottomDockWidgetArea, self.dockWidgetLog)
+        self.addDockWidget(Qt.DockWidgetArea.BottomDockWidgetArea, self.dockWidgetLog)
 
         # Set actions
         # set icons to menubar actions

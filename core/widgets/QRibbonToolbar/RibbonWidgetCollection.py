@@ -57,7 +57,7 @@ class QRibbonTab(QWidget):
         self.setLayout(self.tabLayout)
         self.tabLayout.setContentsMargins(0, 0, 0, 0)
         self.tabLayout.setSpacing(0)
-        self.tabLayout.setAlignment(Qt.AlignLeft)
+        self.tabLayout.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
     def addRibbonPane(self, name, type="Horizontal"):
         ribbonPane = QRibbonPane(self, name, type)
@@ -76,9 +76,9 @@ class QRibbonButton(QToolButton):
         if buttonSizeFlag == "StandardButton":
             label = QLabel(self.buttonAction.text(), self)
             label.setWordWrap(True)
-            label.setAlignment(Qt.AlignCenter)
+            label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             layout = QHBoxLayout(self)
-            layout.addWidget(label, 0, Qt.AlignCenter | Qt.AlignBottom)
+            layout.addWidget(label, 0, Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignBottom)
         else:
             self.setText(self.buttonAction.text())
         self.updateButtonStatusFromAction()
@@ -91,10 +91,10 @@ class QRibbonButton(QToolButton):
             self.setMinimumHeight(80 * gui_scale())
             self.setMaximumHeight(80 * gui_scale())
             self.setStyleSheet(get_stylesheet("StandardButton"))
-            self.setToolButtonStyle(3)
+            self.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextUnderIcon)
             self.setIconSize(QSize(40 * gui_scale(), 40 * gui_scale()))
         elif buttonSizeFlag == "SmallButton":
-            self.setToolButtonStyle(2)
+            self.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
             self.setMaximumWidth(150 * gui_scale())
             self.setIconSize(QSize(20 * gui_scale(), 20 * gui_scale()))
             self.setStyleSheet(get_stylesheet("SmallButton"))
@@ -125,7 +125,7 @@ class QRibbonPane(QWidget):
         vertical_layout.setContentsMargins(0, 0, 0, 0)
         vertical_widget.setLayout(vertical_layout)
         label = QLabel(name)
-        label.setAlignment(Qt.AlignCenter | Qt.AlignBottom)
+        label.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignBottom)
         label.setStyleSheet("color:#666;")
 
         content_widget = QWidget(self)
@@ -135,7 +135,7 @@ class QRibbonPane(QWidget):
             content_layout = QHBoxLayout()
         else:
             content_layout = QGridLayout()
-        content_layout.setAlignment(Qt.AlignLeft)
+        content_layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         content_layout.setSpacing(3)
         content_layout.setContentsMargins(0, 0, 0, 0)
         self.contentLayout = content_layout
@@ -143,12 +143,12 @@ class QRibbonPane(QWidget):
 
     def addRibbonWidget(self, widget, pos=None):
         if self.type == "Horizontal":
-            self.contentLayout.addWidget(widget, 0, Qt.AlignBottom)
+            self.contentLayout.addWidget(widget, 0, Qt.AlignmentFlag.AlignBottom)
         else:
             if pos is not None:
                 a, b, c, d = pos
                 self.contentLayout.addWidget(widget, a, b, c, d)
-                self.contentLayout.setAlignment(Qt.AlignBottom | Qt.AlignLeft)
+                self.contentLayout.setAlignment(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignLeft)
 
     def add_grid_widget(self, width):
         widget = QWidget()
@@ -158,7 +158,7 @@ class QRibbonPane(QWidget):
         grid_layout.setSpacing(4)
         grid_layout.setContentsMargins(4, 4, 4, 4)
         self.contentLayout.addWidget(widget)
-        grid_layout.setAlignment(Qt.AlignBottom | Qt.AlignLeft)
+        grid_layout.setAlignment(Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignLeft)
         return grid_layout
 
 

@@ -41,7 +41,7 @@ class Catalog(QDockWidget):
         self.message = Messenger()
 
         # set custom context menu
-        self.view.setContextMenuPolicy(Qt.CustomContextMenu)
+        # self.view.setContextMenuPolicy(CustomContextMenu)
         self.view.customContextMenuRequested.connect(self.contextMenuEvent)
         self.view.doubleClicked.connect(self.mouseDoubleClickEvent)
 
